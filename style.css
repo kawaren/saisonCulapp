@@ -1,0 +1,63 @@
+body {
+    text-align: center;
+    font-family: "Meiryo", sans-serif;
+}
+
+input {
+    padding: 10px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* ボーダーを1つにまとめる */
+    padding-right: auto;
+    border: 1px solid rgb(200, 200, 200);
+}
+
+.categoryBtn {
+    width: 15%;
+    height: 25px;
+    border-radius: 10px;
+    font-size: calc(0.1 * 20vw)
+}
+
+.active {
+    background-color: green;
+    color: white;
+}
+
+.end {
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+
+ .btns-td {
+    border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+th {
+    background-color: rgb(200, 200, 200);
+    padding: 30px 10px;
+}
+
+td {
+    padding: 5px;
+}
+
+.td-0 {
+    text-align: left;
+}
+
+.td-1 {
+    text-align: left;
+}
+
+.td-2 {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.btns-td {
+    padding: 5px 0px;
+}
