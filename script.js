@@ -1,15 +1,15 @@
 ////UIプレビュー用
-let dataArray = [
-    ['2024/12/04', 'GOOGLE PAYMENT SPLITIT', 6050, '未選択'],
-    ['2024/12/05', 'ETC西日本  (大洲→松山)', 1300, '未選択'],
-    ['2024/12/05', 'ETC西日本  (大洲松尾→大洲松尾)', 590, '未選択'],
-    ['2024/12/08', 'ETC特別割引 (松山→大洲)', 910, '未選択'],
-    ['2024/12/08', 'ETC特別割引 (大洲松尾→大洲松尾)', 410, '未選択'],
-    ['2024/12/08', 'QP/シンチトセ クウコウ ターミナル', 2160, '未選択'],
-    ['2024/12/10', 'QP/ローソン', 310, '未選択'],
-    ['2024/12/11', 'QP/ココイチバンヤウワジマコクド', 736, '未選択'],
-    ['2024/12/11', 'QP/ローソン', 310, '未選択']
-]
+//let dataArray = [
+//    ['2024/12/04', 'GOOGLE PAYMENT SPLITIT', 6050, '未選択'],
+//    ['2024/12/05', 'ETC西日本  (大洲→松山)', 1300, '未選択'],
+//    ['2024/12/05', 'ETC西日本  (大洲松尾→大洲松尾)', 590, '未選択'],
+//    ['2024/12/08', 'ETC特別割引 (松山→大洲)', 910, '未選択'],
+//    ['2024/12/08', 'ETC特別割引 (大洲松尾→大洲松尾)', 410, '未選択'],
+//    ['2024/12/08', 'QP/シンチトセ クウコウ ターミナル', 2160, '未選択'],
+//    ['2024/12/10', 'QP/ローソン', 310, '未選択'],
+//    ['2024/12/11', 'QP/ココイチバンヤウワジマコクド', 736, '未選択'],
+//    ['2024/12/11', 'QP/ローソン', 310, '未選択']
+//]
 
 
 const categories = [
@@ -23,22 +23,22 @@ const categories = [
 
 //イベント
 //ファイル選択時に実行
-//document.getElementById("fileInput").addEventListener("change", (e) => {
-//    const file = e.target.files[0];
-//    if (!file) return;
-//
-//    const reader = new FileReader();
-//
-//    // ファイルをバイナリデータで読み込み
-//    reader.readAsArrayBuffer(file);
-//
-//    // ファイル読み込み完了後の処理
-//    reader.onload = (e) => {
-//        const arrayBuffer = e.target.result;
-//        //バイナリをデコード
-//        const csvData = decodeCSVData(arrayBuffer);
-//        // CSVデータを処理して配列化
-//        let dataArray = getArrayFromCSV(csvData)
+document.getElementById("fileInput").addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    // ファイルをバイナリデータで読み込み
+    reader.readAsArrayBuffer(file);
+
+    // ファイル読み込み完了後の処理
+    reader.onload = (e) => {
+        const arrayBuffer = e.target.result;
+        //バイナリをデコード
+        const csvData = decodeCSVData(arrayBuffer);
+        // CSVデータを処理して配列化
+        let dataArray = getArrayFromCSV(csvData)
 
         //tableの中身を生成
         createContent(dataArray, categories);
@@ -97,8 +97,8 @@ const categories = [
         
             `);
         });
-//    };
-//});
+    };
+});
 
 function getArrayFromCSV(csvData) {
     // 改行文字でデータを行ごとに分割かつ、,ごとに分裂し２次元配列を生成
